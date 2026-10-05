@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dhaksha Tech | Electronics & Communication Engineering</title>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Dhaksha | ECE Student & Electronics Enthusiast</title>
 
     <style>
+
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         html {
@@ -18,367 +23,479 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background: #f5f7fa;
-            color: #1f2937;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #08050f;
+            color: white;
+            overflow-x: hidden;
         }
 
+        /* Background glow */
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: #7c3aed;
+            filter: blur(180px);
+            opacity: 0.15;
+            top: -150px;
+            left: -100px;
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 450px;
+            height: 450px;
+            background: #2563eb;
+            filter: blur(180px);
+            opacity: 0.12;
+            right: -100px;
+            bottom: -100px;
+            z-index: -1;
+        }
+
+
+        /* NAVIGATION */
+
         nav {
-            background: #111827;
-            padding: 20px 8%;
+            width: 100%;
+            padding: 25px 8%;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
+
+            position: fixed;
             top: 0;
             z-index: 100;
+
+            background: rgba(8, 5, 15, 0.75);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
-        nav h2 {
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
             color: white;
+        }
+
+        .logo span {
+            color: #a855f7;
+        }
+
+        nav ul {
+            list-style: none;
+
+            display: flex;
+            gap: 30px;
         }
 
         nav a {
-            color: white;
+            color: #b8b0c8;
             text-decoration: none;
-            margin-left: 20px;
+            font-size: 14px;
+
+            transition: 0.3s;
         }
+
+        nav a:hover {
+            color: #c084fc;
+        }
+
+
+        /* HERO */
 
         .hero {
-            padding: 110px 8%;
-            background: white;
+
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
             text-align: center;
+
+            padding: 120px 20px 80px;
+
+            position: relative;
         }
 
-        .hero h1 {
-            font-size: 46px;
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hello {
+            color: #c084fc;
+            font-size: 16px;
             margin-bottom: 15px;
         }
 
-        .hero h1 span {
-            color: #2563eb;
+        .hero h1 {
+
+            font-size: clamp(50px, 8vw, 90px);
+
+            line-height: 1.05;
+
+            margin-bottom: 15px;
+
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #c084fc,
+                #60a5fa
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .hero h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
+        .hero h2 {
+
+            font-size: clamp(22px, 4vw, 36px);
+
+            color: #ddd6fe;
+
+            margin-bottom: 25px;
         }
 
-        .hero p {
-            font-size: 19px;
-            color: #555;
-            max-width: 750px;
+        .hero-description {
+
+            max-width: 650px;
+
             margin: auto;
+
+            color: #9f98ad;
+
+            font-size: 17px;
+
+            line-height: 1.8;
         }
 
-        .button {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 13px 25px;
-            background: #2563eb;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-        }
 
-        section {
-            padding: 70px 8%;
-        }
+        /* BUTTONS */
 
-        section h2 {
-            text-align: center;
-            margin-bottom: 35px;
-            font-size: 32px;
-        }
+        .buttons {
 
-        .about {
-            max-width: 850px;
-            margin: auto;
-            text-align: center;
-            font-size: 18px;
-        }
+            margin-top: 35px;
 
-        .skills {
             display: flex;
-            flex-wrap: wrap;
+
             justify-content: center;
+
             gap: 15px;
-            max-width: 900px;
-            margin: auto;
+
+            flex-wrap: wrap;
         }
 
-        .skill {
-            background: white;
-            padding: 15px 25px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        }
+        .btn {
 
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            max-width: 1000px;
-            margin: auto;
-        }
+            padding: 13px 25px;
 
-        .project {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-        }
+            border-radius: 8px;
 
-        .project h3 {
-            margin-bottom: 12px;
-        }
-
-        .project p {
-            color: #555;
-        }
-
-        .project a {
-            display: inline-block;
-            margin-top: 18px;
-            color: #2563eb;
             text-decoration: none;
+
+            font-size: 14px;
+
             font-weight: bold;
+
+            transition: 0.3s;
         }
 
-        .services {
-            background: white;
-        }
+        .primary {
 
-        .contact {
-            text-align: center;
-        }
+            background: #a855f7;
 
-        footer {
-            background: #111827;
             color: white;
-            text-align: center;
-            padding: 30px;
+
+            box-shadow: 0 0 25px rgba(168,85,247,0.3);
         }
 
-        @media (max-width: 700px) {
+        .primary:hover {
 
-            .hero h1 {
-                font-size: 35px;
-            }
+            transform: translateY(-3px);
+
+            background: #9333ea;
+        }
+
+        .secondary {
+
+            border: 1px solid #7040a0;
+
+            color: #d8b4fe;
+
+            background: rgba(168,85,247,0.05);
+        }
+
+        .secondary:hover {
+
+            transform: translateY(-3px);
+
+            background: rgba(168,85,247,0.12);
+        }
+
+
+        /* SOCIAL LINKS */
+
+        .socials {
+
+            margin-top: 35px;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 20px;
+        }
+
+        .socials a {
+
+            width: 42px;
+            height: 42px;
+
+            border: 1px solid #332342;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            color: #a78bfa;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+        .socials a:hover {
+
+            background: #a855f7;
+
+            color: white;
+
+            transform: translateY(-4px);
+
+            box-shadow: 0 0 20px rgba(168,85,247,0.4);
+        }
+
+
+        /* SCROLL */
+
+        .scroll {
+
+            position: absolute;
+
+            bottom: 30px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            color: #756d80;
+
+            font-size: 13px;
+        }
+
+        .arrow {
+
+            display: block;
+
+            margin-top: 8px;
+
+            color: #a855f7;
+
+            font-size: 20px;
+        }
+
+
+        /* MOBILE */
+
+        @media(max-width: 700px) {
 
             nav {
-                flex-direction: column;
-                gap: 10px;
+                padding: 20px;
+            }
+
+            nav ul {
+                gap: 12px;
             }
 
             nav a {
-                margin: 5px;
+                font-size: 12px;
             }
+
+            .logo {
+                font-size: 16px;
+            }
+
+            .hero {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- Navigation -->
+
+    <!-- NAVIGATION -->
 
     <nav>
 
-        <h2>Dhaksha Tech</h2>
-
-        <div>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
+        <div class="logo">
+            Dhaksha<span>.</span>
         </div>
+
+        <ul>
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
 
     </nav>
 
 
-    <!-- Home -->
 
-    <section class="hero">
+    <!-- HERO -->
 
-        <h1>Hi, I'm <span>Dhaksha</span></h1>
+    <section class="hero" id="home">
 
-        <h3>Electronics & Communication Engineering Student</h3>
+        <div class="hero-content">
 
-        <p>
-            Interested in electronics, embedded systems, IoT,
-            microcontrollers and communication technologies.
-            I enjoy building practical engineering projects
-            that solve real-world problems.
-        </p>
-
-        <a class="button" href="#projects">
-            Explore My Projects
-        </a>
-
-    </section>
+            <div class="hello">
+                Hello, I'm
+            </div>
 
 
-    <!-- About -->
+            <h1>
+                Dhaksha
+            </h1>
 
-    <section id="about">
 
-        <h2>About Me</h2>
+            <h2>
+                Electronics & Communication
+                Engineering Student
+            </h2>
 
-        <div class="about">
 
-            <p>
-                I am an Electronics and Communication Engineering
-                student with an interest in embedded systems,
-                IoT, electronics and communication technologies.
+            <p class="hero-description">
+
+                I am an ECE student passionate about
+                electronics, IoT, embedded systems and
+                communication technologies.
+
+                I enjoy turning ideas into practical
+                engineering projects and real-world
+                solutions.
+
             </p>
 
-            <br>
 
-            <p>
-                My focus is on learning through practical projects
-                and developing real-world engineering solutions
-                using electronic hardware, sensors, microcontrollers
-                and connected systems.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- Skills -->
-
-    <section id="skills">
-
-        <h2>Technical Interests & Skills</h2>
-
-        <div class="skills">
-
-            <div class="skill">Electronics</div>
-            <div class="skill">Embedded Systems</div>
-            <div class="skill">IoT</div>
-            <div class="skill">Microcontrollers</div>
-            <div class="skill">ESP32</div>
-            <div class="skill">Arduino</div>
-            <div class="skill">Sensors</div>
-            <div class="skill">Communication Systems</div>
-            <div class="skill">Circuit Design</div>
-
-        </div>
-
-    </section>
-
-
-    <!-- Projects -->
-
-    <section id="projects">
-
-        <h2>Featured Projects</h2>
-
-        <div class="projects">
-
-
-            <div class="project">
-
-                <h3>🌾 IoT-Based Grain Storage Protection System</h3>
-
-                <p>
-                    An IoT-based electronics project designed to
-                    monitor environmental conditions in grain storage
-                    and support automated alerts and protection.
-                </p>
+            <div class="buttons">
 
                 <a
-                    href="https://github.com/dhaksha-tech/IoT-based-Grain-Storage-Protection-System"
-                    target="_blank">
+                    href="#projects"
+                    class="btn primary">
 
-                    View Project on GitHub →
+                    View My Projects
+
+                </a>
+
+
+                <a
+                    href="#contact"
+                    class="btn secondary">
+
+                    Let's Connect
 
                 </a>
 
             </div>
 
 
-            <div class="project">
+            <!-- SOCIAL LINKS -->
 
-                <h3>🚚 Smart Transportation Cost Monitoring</h3>
-
-                <p>
-                    An IoT-based transportation monitoring project
-                    designed to track vehicle and trip-related
-                    information for transportation cost analysis.
-                </p>
+            <div class="socials">
 
                 <a
-                    href="https://github.com/dhaksha-tech/Smart-Transportation-Cost-Monitoring"
-                    target="_blank">
+                    href="https://github.com/dhaksha-tech"
+                    target="_blank"
+                    title="GitHub">
 
-                    View Project on GitHub →
+                    Git
+
+                </a>
+
+
+                <a
+                    href="https://www.linkedin.com/in/m-dhatchayeni-a2253b2a2?"
+                    title="LinkedIn">
+
+                    in
+
+                </a>
+
+
+                <a
+                    href="mailto:dhatchayenim41@gmail.com"
+                    title="Email">
+
+                    @
 
                 </a>
 
             </div>
 
+        </div>
+
+
+        <div class="scroll">
+
+            Scroll to explore
+
+            <span class="arrow">
+                ↓
+            </span>
 
         </div>
 
     </section>
 
-
-    <!-- Services -->
-
-    <section id="services" class="services">
-
-        <h2>What I Can Work On</h2>
-
-        <div class="skills">
-
-            <div class="skill">IoT Projects</div>
-            <div class="skill">Embedded Systems</div>
-            <div class="skill">ESP32 Projects</div>
-            <div class="skill">Arduino Projects</div>
-            <div class="skill">Sensor-Based Systems</div>
-            <div class="skill">Electronics Projects</div>
-
-        </div>
-
-    </section>
-
-
-    <!-- Contact -->
-
-    <section id="contact" class="contact">
-
-        <h2>Let's Connect</h2>
-
-        <p>
-            Interested in electronics, IoT or embedded systems?
-            Feel free to connect with me.
-        </p>
-
-        <a
-            class="button"
-            href="https://github.com/dhaksha-tech"
-            target="_blank">
-
-            Visit My GitHub
-
-        </a>
-
-    </section>
-
-
-    <!-- Footer -->
-
-    <footer>
-
-        <p>
-            © 2026 Dhaksha Tech | Electronics & Communication Engineering
-        </p>
-
-    </footer>
 
 </body>
+
 </html>
