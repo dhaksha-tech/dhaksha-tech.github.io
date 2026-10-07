@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>IoT Project | Dhaksha Tech</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #08050f;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        nav {
+            width: 100%;
+            padding: 25px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: fixed;
+            top: 0;
+            z-index: 100;
+
+            background: rgba(8, 5, 15, 0.8);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #a855f7;
+        }
+
+        nav a {
+            color: #b8b0c8;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #c084fc;
+        }
+
+        .project-page {
+            min-height: 100vh;
+            padding: 150px 8% 80px;
+            text-align: center;
+        }
+
+        .project-page h1 {
+            font-size: clamp(40px, 7vw, 70px);
+
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #c084fc,
+                #60a5fa
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            color: #c084fc;
+            font-size: 20px;
+            margin-bottom: 35px;
+        }
+
+        .project-content {
+            max-width: 850px;
+            margin: auto;
+            text-align: left;
+        }
+
+        .project-content h2 {
+            color: #c084fc;
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+
+        .project-content p {
+            color: #aaa2b5;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .project-content ul {
+            margin-top: 15px;
+            padding-left: 25px;
+            color: #aaa2b5;
+            line-height: 2;
+        }
+
+        .project-card {
+            margin-top: 40px;
+            padding: 30px;
+
+            background: rgba(168,85,247,0.08);
+
+            border: 1px solid #332342;
+
+            border-radius: 15px;
+        }
+
+        .back-button {
+            display: inline-block;
+
+            margin-top: 45px;
+
+            padding: 13px 25px;
+
+            border-radius: 8px;
+
+            background: #a855f7;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: #9333ea;
+            transform: translateY(-3px);
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="logo">
+            Dhaksha<span>Tech.</span>
+        </div>
+
+        <a href="index.html">
+            ← Back to Home
+        </a>
+
+    </nav>
+
+
+    <section class="project-page">
+
+        <h1>IoT Project</h1>
+
+        <div class="subtitle">
+            Internet of Things Engineering Project
+        </div>
+
+
+        <div class="project-content">
+
+            <div class="project-card">
+
+                <h2>Project Overview</h2>
+
+                <p>
+                    This project focuses on developing an
+                    IoT-based system that can collect data
+                    from sensors and communicate the
+                    information through the internet.
+                </p>
+
+            </div>
+
+
+            <h2>Objective</h2>
+
+            <p>
+                The main objective of this project is to
+                create a practical IoT solution that can
+                monitor real-world conditions and provide
+                useful information to the user.
+            </p>
+
+
+            <h2>Technologies Used</h2>
+
+            <ul>
+
+                <li>Arduino / ESP32</li>
+
+                <li>IoT Sensors</li>
+
+                <li>Wi-Fi Communication</li>
+
+                <li>Embedded C / Arduino IDE</li>
+
+                <li>Internet of Things</li>
+
+            </ul>
+
+
+            <h2>How It Works</h2>
+
+            <p>
+                Sensors collect information from the
+                environment. The microcontroller processes
+                the collected data and sends it through a
+                Wi-Fi connection. The data can then be
+                monitored by the user through an IoT
+                platform or web application.
+            </p>
+
+
+            <h2>My Contribution</h2>
+
+            <p>
+                I worked on the hardware connections,
+                sensor integration, programming and
+                testing of the IoT system.
+            </p>
+
+
+            <h2>Future Improvements</h2>
+
+            <p>
+                The project can be improved by adding
+                additional sensors, cloud storage,
+                real-time notifications and a dedicated
+                mobile application.
+            </p>
+
+        </div>
+
+
+        <a href="index.html#projects"
+           class="back-button">
+
+            ← Back to Projects
+
+        </a>
+
+    </section>
+
+</body>
+
+</html>
